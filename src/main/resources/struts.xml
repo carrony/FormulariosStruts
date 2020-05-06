@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
+    <package name="myPackage" extends="struts-default">
+        <action name="ir_registro">
+            <result>/WEB-INF/jsp/registro.jsp</result>
+        </action>
+        <action name="crear_usuario" class="com.dred.struts.formularios.usuario.UsuarioAction">
+            <result>/WEB-INF/jsp/registrado.jsp</result>
+        </action>
+
+    </package>
+
+</struts>
