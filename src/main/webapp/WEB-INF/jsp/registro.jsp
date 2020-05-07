@@ -18,9 +18,12 @@
 		<s:textfield label="Correo electrónico" name="usuario.email"/>
 		<s:password label="Contraseña" name="usuario.password"/>
 		<s:textfield label="Fecha nacimiento" name="usuario.fechaNac" type="date" format="dd-MM-yyyy"/>
+		<s:radio label="Género" name="usuario.genero" list="{'Hombre','Mujer','Otro'}"/>
+		<s:select label="Provincia" list="provincias" listKey="codigo" listValue="nombre" name="usuario.provincia"></s:select>
+		<s:checkboxlist list="{'C++','Java', 'PHP', 'Python'}" name="usuario.lenguajes"/>
 		<s:submit value="Registrar"/>
 	</s:form>
 	</div>
-	
+
 </body>
 </html>

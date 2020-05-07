@@ -1,6 +1,7 @@
 package com.dred.struts.formularios.usuario;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario implements Serializable {
@@ -10,7 +11,11 @@ public class Usuario implements Serializable {
 	private String apellidos;
 	private String email;
 	private String password;
+	private String provincia;
 	private Date fechaNac;
+	private String genero;
+	private ArrayList<String> lenguajes;
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -42,5 +47,23 @@ public class Usuario implements Serializable {
 	public void setFechaNac(Date fechaNac) {
 		this.fechaNac = fechaNac;
 	}
-
+	public String getProvincia() {
+		return provincia;
+	}
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	public ArrayList<String> getLenguajes() {
+		return lenguajes;
+	}
+	public void setLenguajes(ArrayList<String> lenguajes) {
+		this.lenguajes = lenguajes;
+	}
+	
 }

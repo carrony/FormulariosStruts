@@ -6,7 +6,10 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 
     <package name="myPackage" extends="struts-default">
-        <action name="ir_registro">
+        <action name="index">
+        	<result>/index.jsp</result>
+        </action>
+        <action name="ir_registro" class="com.dred.struts.formularios.usuario.RellenaProvinciasAction">
             <result>/WEB-INF/jsp/registro.jsp</result>
         </action>
         <action name="crear_usuario" class="com.dred.struts.formularios.usuario.UsuarioAction">
