@@ -3,22 +3,27 @@ package com.dred.struts.formularios.usuario;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
-public class RellenaProvinciasAction extends ActionSupport { // implements Preparable{
+public class RellenaProvinciasAction extends ActionSupport 
+                          implements Preparable ,SessionAware{
 
 	// Elementos que ayudarán a crear los componentes del formulario
 	private ArrayList<String> generos;
 	private List<String> lenguajes;
 	private ArrayList<Provincia> provincias;
+	private Map<String, Object> session;
 	
 	
 	
 	public RellenaProvinciasAction() {
-		this.rellenaListas();
+		
 	}
 	
 	private void rellenaListas() {
@@ -69,12 +74,18 @@ public class RellenaProvinciasAction extends ActionSupport { // implements Prepa
 	public String execute() {
 		return Action.SUCCESS;
 	}
-/*	@Override
+	
+    @Override
 	public void prepare() throws Exception {
-		this.generos =  new ArrayList<String>();
-		this.generos.add("Hombre");
-		this.generos.add("Mujer");
+    	this.rellenaListas();
+    	this.session.put("provincias", this.provincias);
 		
-	}*/
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session=session;
+	}
+
 }
 

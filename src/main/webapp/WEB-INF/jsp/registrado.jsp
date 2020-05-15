@@ -1,15 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="/struts-tags" prefix="s" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Registro Correcto</title>
-<link rel="stylesheet" href="/css/estilos.css">
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+
+<s:include value="inicio.jsp">
+     <s:param name="titulo"> Listado de Productos</s:param>
+</s:include>
 	<h2>Enhorabuena!. Se ha registrado en la web correctamente.</h2>
 	<h3>Los detealles de registro</h3>
 	
@@ -17,9 +12,9 @@
 		<tr><th> Nombre: </th><td><s:property value="usuario.nombre"/></td></tr>
 		<tr><th> Apellidos:</th> <td><s:property value="usuario.apellidos"/></td></tr>
 		<tr><th> Nombre: </th><td><s:property value="usuario.email"/></td></tr>
-		<tr><th> Contraseña: </th><td><s:property value="usuario.password"/></td></tr>
+		<tr><th> ContraseÃ±a: </th><td><s:property value="usuario.password"/></td></tr>
 		<tr><th> Fecha Nac: </th><td><s:property value="usuario.fechaNac"/></td></tr>
-		<tr><th> Género: </th><td><s:property value="usuario.genero"/></td></tr><tr>
+		<tr><th> GÃ©nero: </th><td><s:property value="usuario.genero"/></td></tr><tr>
 		<tr><th> Provincia: </th><td><s:property value="usuario.provincia"/></td></tr>
 		<tr><th> Lenguajes: </th><td><ul>
 		<s:iterator value="usuario.lenguajes">
@@ -28,5 +23,5 @@
 		
 	</table>
 	<a href="<s:url action='index'/>">Volver al Inicio</a>
-</body>
-</html>
+	
+<s:include value="fin.jsp"/>

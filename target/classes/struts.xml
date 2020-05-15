@@ -14,6 +14,7 @@
         </action>
         <action name="crear_usuario" class="com.dred.struts.formularios.usuario.UsuarioAction">
             <result>/WEB-INF/jsp/registrado.jsp</result>
+            <result name="input">/WEB-INF/jsp/registro.jsp</result>
         </action>
 
     </package>
