@@ -1,0 +1,38 @@
+<!DOCTYPE validators PUBLIC 
+"-//Apache Struts//XWork Validator 1.0.3//EN" 
+"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="usuario.nombre">
+		<field-validator type="requiredstring">
+			<message>El campo nombre es obligatorio</message>
+		</field-validator>
+	</field>
+	<field name="usuario.email">
+		<field-validator type="requiredstring">
+			<message>El campo Correo electrónico es obligatorio</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>Formato de Correo electrónico incorrecto</message>
+		</field-validator>
+	</field>
+	<field name="usuario.password">
+		<field-validator type="requiredstring">
+			<message>El campo contraseña es obligatorio</message>
+		</field-validator>
+		<field-validator type="stringlength">
+		<param name="minLength">6</param>
+			<message>La contraseña debe tener al menos seis carácterres.</message>
+		</field-validator>
+		<field-validator type="fortalezaPassword">
+			<param name="caracteresEspeciales">$!@#?</param>
+			<message>El password debe contener al menos una letra, un número y un
+			 carácter especal de los siguientes "${caracteresEspeciales}".
+			</message>
+			</field-validator>
+	</field>
+	<validator type="expression">
+		<param name="expression">usuario.password == rePassword</param>
+		<message>Las contraseñas no coinciden (validator)</message>
+	</validator>
+
+</validators>

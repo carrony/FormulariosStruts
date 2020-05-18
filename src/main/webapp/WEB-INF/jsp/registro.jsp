@@ -3,7 +3,7 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
 <s:include value="inicio.jsp">
-     <s:param name="titulo"> Listado de Productos</s:param>
+     <s:param name="titulo"> Registro de Usuario</s:param>
 </s:include>
 
 	<h2>Registro</h2>
@@ -20,7 +20,7 @@
 			<s:password label="Contraseña" name="usuario.password"/>
 			<s:password label="Repetir Contraseña" name="rePassword"/>
 			<s:textfield label="Fecha nacimiento" name="usuario.fechaNac" type="date" format="dd-MM-yyyy"/>
-			<s:radio label="Género" name="usuario.genero" list="{'Hombre','Mujer','Otro'}"/>
+			<s:radio label="Género" name="usuario.genero" list="{'Hombre','Mujer','Otro'}"/>	
 		  	<s:select label="Provincia" list="#session.provincias" listKey="codigo" listValue="nombre" name="usuario.provincia"></s:select>
 			<s:checkboxlist list="{'C++','Java', 'PHP', 'Python'}" name="usuario.lenguajes"/>
 			<s:submit value="Registrar"/>

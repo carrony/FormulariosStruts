@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
-<s:include value="inicio.jsp">
-     <s:param name="titulo"> Listado de Productos</s:param>
-</s:include>
+	<s:include value="inicio.jsp">
+	     <s:param name="titulo"> Resumen del registro</s:param>
+	</s:include>
 	<h2>Enhorabuena!. Se ha registrado en la web correctamente.</h2>
 	<h3>Los detealles de registro</h3>
 	
