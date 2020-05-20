@@ -10,4 +10,8 @@
 	<s:url action="ir_registro" var="linkRegistro"/>
 	<a href="${linkRegistro}">Regístrate</a> 
 	
+	<h3> Crea un nuevo proyecto</h3>
+	<s:url action="ir_nuevoProyecto" var="linkProyecto"/>
+	<a href="${linkProyecto}">Crear Proyecto</a> 
+	
 <s:include value="/WEB-INF/jsp/fin.jsp"/>
