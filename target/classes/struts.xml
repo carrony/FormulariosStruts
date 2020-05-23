@@ -10,12 +10,17 @@
         	<result>/index.jsp</result>
         </action>
         <action name="ir_registro" class="com.dred.struts.formularios.usuario.RellenaProvinciasAction">
-            <result>/WEB-INF/jsp/registro.jsp</result>
+            <result type="redirectAction">listar_usuarios</result>
         </action>
-        <action name="crear_usuario" class="com.dred.struts.formularios.usuario.UsuarioAction">
-            <result>/WEB-INF/jsp/registrado.jsp</result>
+        <action name="listar_usuarios" method="mostrar" class="com.dred.struts.formularios.usuario.UsuarioAction">
+            <result>/WEB-INF/jsp/registro.jsp</result>
             <result name="input">/WEB-INF/jsp/registro.jsp</result>
         </action>
+        <action name="crear_usuario" class="com.dred.struts.formularios.usuario.UsuarioAction">
+            <result type="redirectAction">listar_usuarios</result>
+            <result name="input">/WEB-INF/jsp/registro.jsp</result>
+        </action>
+        
 		 <action name="ir_nuevoProyecto">
             <result>/WEB-INF/jsp/nuevo_proyecto.jsp</result>
         </action>

@@ -21,51 +21,34 @@ form > div {
      color:#73af55;
  }
  main {
-     width: 80%;
-     margin:20px auto;
      padding: 20px;
  }
- .articulo {
-     width:70%;
-     margin: auto;
- }
 
- .articulo li {
-    display: flex;
-    justify-content: space-between;  
-    align-items: center;
+
+ .listaDetalles {
+    border-collapse: collapse;
     border: solid 2px navy;
-    border-radius: 20px 0 30px 5px;
-    margin: 20px 0 20px 0;
-    padding: 10px;
-    width: 90%;
-    flex-wrap: wrap;
-    box-shadow:  5px 8px #888888;
-    font-size: 1.4rem;
+    width: 100%;
  }
 
- .articulo li > div {
-     width:45%;
+ .listaDetalles td, .listaDetalles td {
+     border: solid 2px navy;
  }
 
- .articulo li:nth-child(odd) {
+ .listaDetalles tr:nth-child(odd) {
     background-color: lightsteelblue;
  }
 
- .articulo img {
-     width: 100px;
- }
-
- .resumen {
+ .listaDetalles tr:first-child {
     
- }
+    margin: 20px 0 20px 0;
+    color: white;
+    background-color: navy;
+}
 
- .articulo a>img {
-     width: 50px;
-     border: black 1px solid;
-     border-radius: 20px 0;
-     box-shadow:  5px 10px #888888;
- }
+#crear_usuario > table {
+	margin: 0 auto;
+}
 
  .precio { 
      color:blue;
@@ -115,3 +98,4 @@ form > div {
     border: solid olive 2px;
     border-radius: 20px 0 30px 5px;
 }
+

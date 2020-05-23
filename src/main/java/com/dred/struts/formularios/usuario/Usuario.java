@@ -7,6 +7,7 @@ import java.util.Date;
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	private int id;
 	private String nombre;
 	private String apellidos;
 	private String email;
@@ -16,6 +17,22 @@ public class Usuario implements Serializable {
 	private String genero;
 	private ArrayList<String> lenguajes;
 	
+	public Usuario() {
+	}
+	
+	public Usuario(int id, String nombre, String apellidos, String email, 
+			String password, String provincia, Date fechaNac, 
+			String genero, ArrayList<String> lenguajes) {
+		this.id=id;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.password = password;
+		this.provincia = provincia;
+		this.fechaNac = fechaNac;
+		this.genero = genero;
+		this.lenguajes = lenguajes;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -64,6 +81,12 @@ public class Usuario implements Serializable {
 	}
 	public void setLenguajes(ArrayList<String> lenguajes) {
 		this.lenguajes = lenguajes;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

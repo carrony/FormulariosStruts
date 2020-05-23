@@ -3,10 +3,10 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
 <s:include value="inicio.jsp">
-     <s:param name="titulo"> Registro de Usuario</s:param>
+     <s:param name="titulo"> Registro de Usuarios</s:param>
 </s:include>
 
-	<h2>Registro</h2>
+	<h2>Registro de Usuarios</h2>
 	<s:if test="hasActionErrors()">
 	   <div class="errors">
 	      <s:actionerror/>
@@ -20,11 +20,39 @@
 			<s:password label="Contraseña" name="usuario.password"/>
 			<s:password label="Repetir Contraseña" name="rePassword"/>
 			<s:textfield label="Fecha nacimiento" name="usuario.fechaNac" type="date" format="dd-MM-yyyy"/>
-			<s:radio label="Género" name="usuario.genero" list="{'Hombre','Mujer','Otro'}"/>	
+			<s:radio label="Género" name="usuario.genero" list="{'Hombre','Mujer','Otro'}" value="'Hombre'"/>	
 		  	<s:select label="Provincia" list="#session.provincias" listKey="codigo" listValue="nombre" name="usuario.provincia"></s:select>
 			<s:checkboxlist list="{'C++','Java', 'PHP', 'Python'}" name="usuario.lenguajes"/>
 			<s:submit value="Registrar"/>
 		</s:form>
 	</div>
+	
+	<h3>Listado de usuarios</h3>
+<table class="listaDetalles">
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Email</th>
+			<th>Fecha Nac.</th>
+			<th>Género</th>
+			<th>Provincia</th>
+			<th>Lenguajes</th>
+		</tr>
+		<s:iterator value="listaUsuarios" var="p">
+			<tr>
+				<td><s:property value="#p.id"/></td>
+				<td><s:property value="#p.nombre"/></td>
+				<td><s:property value="#p.apellidos"/></td>
+				<td><s:property value="#p.email"/></td>
+				<td><s:property value="#p.fechaNac"/></td>
+				<td><s:property value="#p.genero"/></td>
+				<td><s:property value="#p.provincia"/></td>
+				<td><s:iterator value="#p.lenguajes">
+					<s:property/><br>
+				</s:iterator></td>
+			</tr>
+		</s:iterator>
+	</table>
 	
 <s:include value="fin.jsp"/>

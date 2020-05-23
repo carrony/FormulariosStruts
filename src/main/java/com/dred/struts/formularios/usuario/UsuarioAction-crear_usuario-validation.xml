@@ -7,7 +7,7 @@
 			<message>El campo nombre es obligatorio</message>
 		</field-validator>
 	</field>
-	<field name="usuario.email">
+  <field name="usuario.email">
 		<field-validator type="requiredstring">
 			<message>El campo Correo electrónico es obligatorio</message>
 		</field-validator>

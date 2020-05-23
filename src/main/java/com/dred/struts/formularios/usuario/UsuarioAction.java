@@ -10,25 +10,38 @@ import java.util.List;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 
-public class UsuarioAction extends ActionSupport {// implements Preparable{
+public class UsuarioAction extends ActionSupport 
+			implements ModelDriven {
 
 	private static final long serialVersionUID = 1L;
 
 	// Objeto que se almacenará en el ValueStack
 	private Usuario usuario;
+	// Lista de usuarios recuperada del modelo de datos
+	private ArrayList<Usuario> listaUsuarios;
+	
 	// Se almacenará la confimacion del password para realizar la validación
 	private String rePassword;
 	
 	@Override
 	public String execute() throws Exception {
+		
+		UsuarioModelo.agregrarCliente(usuario);
+		return Action.SUCCESS;
+	}
+	
+	
+	public String mostrar() throws Exception {
 		return Action.SUCCESS;
 	}
 	
 	@Override
 	public void validate() {
-		if (!usuario.getPassword().equals(this.getRePassword())) {
+		//usuario=(Usuario) getModel();
+		if (usuario.getPassword()!=null && !usuario.getPassword().equals(this.getRePassword())) {
 			addActionError("Las contraseñas no coinciden.");
 		}
 		
@@ -45,7 +58,15 @@ public class UsuarioAction extends ActionSupport {// implements Preparable{
 	}
 
 
-
+	public Object getModel() {
+		usuario = new Usuario();
+		listaUsuarios= UsuarioModelo.getListaUsuarios();
+		return usuario;
+	}
+	
+	public ArrayList<Usuario> getListaUsuarios() {
+		return listaUsuarios;
+	}
 
 	// Getters y setters 
 	public String getRePassword() {
