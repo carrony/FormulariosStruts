@@ -20,7 +20,21 @@
             <result type="redirectAction">listar_usuarios</result>
             <result name="input">/WEB-INF/jsp/registro.jsp</result>
         </action>
-        
+        <action name="editar_usuario" method="editar" 
+                class="com.dred.struts.formularios.usuario.UsuarioAction">
+                <interceptor-ref name="paramsPrepareParamsStack"/>
+                <result name="input">/WEB-INF/jsp/editar.jsp</result>
+            <result>/WEB-INF/jsp/editar.jsp</result>
+        </action>
+        <action name="modificar_usuario" method="modificar" 
+                class="com.dred.struts.formularios.usuario.UsuarioAction">
+            <result type="redirectAction">listar_usuarios</result>
+            <result name="input">/WEB-INF/jsp/editar.jsp</result>
+        </action>
+        <action name="eliminar_usuario" method="eliminar" 
+                class="com.dred.struts.formularios.usuario.UsuarioAction">
+            <result type="redirectAction">listar_usuarios</result>
+        </action>
 		 <action name="ir_nuevoProyecto">
             <result>/WEB-INF/jsp/nuevo_proyecto.jsp</result>
         </action>

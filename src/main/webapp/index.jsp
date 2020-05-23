@@ -6,7 +6,7 @@
      <s:param name="titulo"> Listado de Productos</s:param>
 </s:include>
 	<h1>Bienvenido a nuestro sitio web!</h1>
-	<h3> Registra Usuarios</h3>
+	<h3> Gestionar Usuarios</h3>
 	<s:url action="ir_registro" var="linkRegistro"/>
 	<a href="${linkRegistro}">Registrar Usuarios</a> 
 	

@@ -38,6 +38,7 @@
 			<th>Género</th>
 			<th>Provincia</th>
 			<th>Lenguajes</th>
+			<th>Acciones</th>
 		</tr>
 		<s:iterator value="listaUsuarios" var="p">
 			<tr>
@@ -45,12 +46,23 @@
 				<td><s:property value="#p.nombre"/></td>
 				<td><s:property value="#p.apellidos"/></td>
 				<td><s:property value="#p.email"/></td>
-				<td><s:property value="#p.fechaNac"/></td>
+				<td><s:date name="#p.fechaNac" format="dd-MM-yyyy"/></td>
 				<td><s:property value="#p.genero"/></td>
 				<td><s:property value="#p.provincia"/></td>
 				<td><s:iterator value="#p.lenguajes">
 					<s:property/><br>
 				</s:iterator></td>
+				<s:url action="editar_usuario" var="linkEditar">
+					<s:param name="idUsuario" value="#p.id"/>
+				</s:url>
+				<s:url action="eliminar_usuario" var="linkEliminar">
+					<s:param name="idUsuario" value="#p.id"/>
+				</s:url>
+				<td>
+				<a href="${linkEditar}"><i class="fas fa-user-edit"></i></a> 
+				<a href="${linkEliminar}"><i class="fas fa-user-times"></i></a>
+				</td>
+				
 			</tr>
 		</s:iterator>
 	</table>
